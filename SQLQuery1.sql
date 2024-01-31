@@ -1,34 +1,15 @@
-USE BikeStores
---meu banco de dados
 
-SELECT *
-FROM production.categories
-
-SELECT *
-FROM sales.staffs
-
-
-SELECT *
-FROM sales.orders
-
---SELECT *
---FROM sales.customers
-
---SELECT *
---FROM sales.order_items
-
-SELECT *
-FROM production.products
 
 USE BikeStores
 SELECT 
   ord.order_id,
+  pb.brand_name,
   CONCAT(cus.first_name, ' ', cus.last_name) as customer_name,
   cus.city,
   cus.state,
   ord.order_date,
   pp.product_name,
-  pc.category_name as brand_name,
+  pc.category_name ,
   sto.store_name,
   CONCAT(st.first_name, ' ', st.last_name) as sales_rep,
   SUM(ite.quantity) AS 'total_units',
@@ -47,6 +28,8 @@ JOIN
   sales.stores sto ON ord.store_id = sto.store_id
 JOIN 
   sales.staffs st ON ord.staff_id = st.staff_id
+JOIN
+  production.brands pb ON pb.brand_id = pp.brand_id
 
 GROUP BY
   ord.order_id,
@@ -57,7 +40,8 @@ GROUP BY
   pp.product_name,
   pc.category_name,  -- Removendo o alias "brand_name" aqui
   sto.store_name,
-  CONCAT(st.first_name, ' ', st.last_name);
+  CONCAT(st.first_name, ' ', st.last_name),
+  pb.brand_name;
 
 
 
