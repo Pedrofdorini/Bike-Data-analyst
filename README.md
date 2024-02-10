@@ -11,5 +11,5 @@ Data Preparation: Following the extraction, I used Excel to perform initial data
 
 Data Visualization: Subsequently, I exported the dataset from Excel to Tableau, where I created a more visually appealing and interactive dashboard.
 
-Link to the public Tableau dashboard: Tableau Dashboard
+Link to the public Tableau dashboard: <a href="https://public.tableau.com/views/Book111_17075904471840/Dashboard1?:language=pt-BR&publish=yes&:display_count=n&:origin=viz_share_link">Tableau Dashboard</a>
 Feel free to explore the dashboard and provide any feedback or suggestions for improvement.
